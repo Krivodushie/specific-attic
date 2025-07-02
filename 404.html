@@ -5,7 +5,12 @@
     <title>Redirecting...</title>
     <script type="text/javascript">
       (function() {
-        window.location.replace('/');
+        var path = window.location.pathname;
+        var search = window.location.search;
+        var hash = window.location.hash;
+
+        var redirectUrl = '/index.html?redirect=' + encodeURIComponent(path + search + hash);
+        window.location.replace(redirectUrl);
       })();
     </script>
   </head>
